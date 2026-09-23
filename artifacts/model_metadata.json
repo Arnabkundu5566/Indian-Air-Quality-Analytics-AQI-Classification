@@ -1,0 +1,553 @@
+{
+  "best_model_name": "XGBoost",
+  "best_model_file": "artifacts/best_model.pkl",
+  "scaler_file": "artifacts/robust_scaler.pkl",
+  "imputation_stats_file": "artifacts/imputation_stats.json",
+  "all_features": [
+    "PM2.5",
+    "PM10",
+    "NO",
+    "NO2",
+    "NOx",
+    "NH3",
+    "CO",
+    "SO2",
+    "O3",
+    "Benzene",
+    "Toluene"
+  ],
+  "lr_features": [
+    "PM2.5",
+    "NO2",
+    "NH3",
+    "CO",
+    "SO2",
+    "O3",
+    "Benzene"
+  ],
+  "target": "AQI_Bucket",
+  "label_map": {
+    "Good": 0,
+    "Satisfactory": 1,
+    "Moderate": 2,
+    "Poor": 3,
+    "Very Poor": 4,
+    "Severe": 5
+  },
+  "inv_label_map": {
+    "0": "Good",
+    "1": "Satisfactory",
+    "2": "Moderate",
+    "3": "Poor",
+    "4": "Very Poor",
+    "5": "Severe"
+  },
+  "bucket_order": [
+    "Good",
+    "Satisfactory",
+    "Moderate",
+    "Poor",
+    "Very Poor",
+    "Severe"
+  ],
+  "split_date": "2019-05-27",
+  "train_rows": 16018,
+  "test_rows": 8832,
+  "evaluation": {
+    "DummyClassifier": {
+      "macro_f1_train": 0.1664434063985264,
+      "macro_f1_test": 0.15395400196039308,
+      "weighted_f1_test": 0.27039262897074695,
+      "balanced_acc_test": 0.16474207854700088,
+      "accuracy_test": 0.255661231884058,
+      "train_time_s": 0.0,
+      "feature_set": [
+        "PM2.5",
+        "PM10",
+        "NO",
+        "NO2",
+        "NOx",
+        "NH3",
+        "CO",
+        "SO2",
+        "O3",
+        "Benzene",
+        "Toluene"
+      ]
+    },
+    "LogisticRegression": {
+      "macro_f1_train": 0.5678359512168613,
+      "macro_f1_test": 0.611743203057228,
+      "weighted_f1_test": 0.6156906011688086,
+      "balanced_acc_test": 0.6804009378201261,
+      "accuracy_test": 0.6069972826086957,
+      "train_time_s": 0.115,
+      "feature_set": [
+        "PM2.5",
+        "NO2",
+        "NH3",
+        "CO",
+        "SO2",
+        "O3",
+        "Benzene"
+      ]
+    },
+    "RandomForest": {
+      "macro_f1_train": 0.9844516957745791,
+      "macro_f1_test": 0.7505804471155892,
+      "weighted_f1_test": 0.7750043560153601,
+      "balanced_acc_test": 0.7454432475205796,
+      "accuracy_test": 0.7785326086956522,
+      "train_time_s": 1.637,
+      "feature_set": [
+        "PM2.5",
+        "PM10",
+        "NO",
+        "NO2",
+        "NOx",
+        "NH3",
+        "CO",
+        "SO2",
+        "O3",
+        "Benzene",
+        "Toluene"
+      ]
+    },
+    "GradientBoosting": {
+      "macro_f1_train": 0.9627037748188099,
+      "macro_f1_test": 0.7387053540024225,
+      "weighted_f1_test": 0.7774594919316302,
+      "balanced_acc_test": 0.7294994914186792,
+      "accuracy_test": 0.7810235507246377,
+      "train_time_s": 89.436,
+      "feature_set": [
+        "PM2.5",
+        "PM10",
+        "NO",
+        "NO2",
+        "NOx",
+        "NH3",
+        "CO",
+        "SO2",
+        "O3",
+        "Benzene",
+        "Toluene"
+      ]
+    },
+    "XGBoost": {
+      "macro_f1_train": 0.9682724427156494,
+      "macro_f1_test": 0.7598266970704223,
+      "weighted_f1_test": 0.7884604388739248,
+      "balanced_acc_test": 0.7572973712537996,
+      "accuracy_test": 0.7892889492753623,
+      "train_time_s": 2.495,
+      "feature_set": [
+        "PM2.5",
+        "PM10",
+        "NO",
+        "NO2",
+        "NOx",
+        "NH3",
+        "CO",
+        "SO2",
+        "O3",
+        "Benzene",
+        "Toluene"
+      ]
+    },
+    "LightGBM": {
+      "macro_f1_train": 0.9900866705551482,
+      "macro_f1_test": 0.7440807331736915,
+      "weighted_f1_test": 0.7803893480127279,
+      "balanced_acc_test": 0.7314980181812069,
+      "accuracy_test": 0.7823822463768116,
+      "train_time_s": 2.318,
+      "feature_set": [
+        "PM2.5",
+        "PM10",
+        "NO",
+        "NO2",
+        "NOx",
+        "NH3",
+        "CO",
+        "SO2",
+        "O3",
+        "Benzene",
+        "Toluene"
+      ]
+    }
+  },
+  "feature_importance": {
+    "PM2.5": 0.28766652941703796,
+    "PM10": 0.20565015077590942,
+    "NO": 0.0424671545624733,
+    "NO2": 0.03849859908223152,
+    "NOx": 0.050515152513980865,
+    "NH3": 0.047725703567266464,
+    "CO": 0.13648968935012817,
+    "SO2": 0.05705837160348892,
+    "O3": 0.04955972358584404,
+    "Benzene": 0.037484463304281235,
+    "Toluene": 0.04688447341322899
+  },
+  "permutation_importance": {
+    "PM2.5": {
+      "mean": 0.2478842798993665,
+      "std": 0.005844099480880176
+    },
+    "CO": {
+      "mean": 0.17301930607066557,
+      "std": 0.00802754794199212
+    },
+    "PM10": {
+      "mean": 0.15363558121270124,
+      "std": 0.013080607260749779
+    },
+    "O3": {
+      "mean": 0.04691016992270428,
+      "std": 0.00644863534229775
+    },
+    "NO": {
+      "mean": 0.03989049165350922,
+      "std": 0.0053095786383561576
+    },
+    "NOx": {
+      "mean": 0.02050166333130382,
+      "std": 0.004934190303228998
+    },
+    "NO2": {
+      "mean": 0.014055393888434287,
+      "std": 0.0052750901125534514
+    },
+    "Toluene": {
+      "mean": 0.010088519036635157,
+      "std": 0.003621199456415913
+    },
+    "SO2": {
+      "mean": 0.00883759652266498,
+      "std": 0.004249268495960736
+    },
+    "NH3": {
+      "mean": 0.007039764748823218,
+      "std": 0.005832774304328732
+    },
+    "Benzene": {
+      "mean": -0.002414909784209174,
+      "std": 0.004790030429415126
+    }
+  },
+  "confusion_matrix": {
+    "LogisticRegression": [
+      [
+        749,
+        168,
+        5,
+        1,
+        0,
+        0
+      ],
+      [
+        1172,
+        2070,
+        632,
+        10,
+        0,
+        0
+      ],
+      [
+        95,
+        531,
+        1686,
+        455,
+        6,
+        2
+      ],
+      [
+        2,
+        3,
+        76,
+        437,
+        110,
+        16
+      ],
+      [
+        0,
+        0,
+        3,
+        63,
+        223,
+        90
+      ],
+      [
+        1,
+        2,
+        2,
+        16,
+        10,
+        196
+      ]
+    ],
+    "RandomForest": [
+      [
+        473,
+        448,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        165,
+        3405,
+        309,
+        3,
+        0,
+        2
+      ],
+      [
+        3,
+        524,
+        2041,
+        201,
+        6,
+        0
+      ],
+      [
+        0,
+        6,
+        98,
+        482,
+        54,
+        4
+      ],
+      [
+        0,
+        0,
+        5,
+        62,
+        279,
+        33
+      ],
+      [
+        0,
+        2,
+        5,
+        5,
+        19,
+        196
+      ]
+    ],
+    "GradientBoosting": [
+      [
+        484,
+        431,
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        144,
+        3299,
+        429,
+        2,
+        2,
+        8
+      ],
+      [
+        3,
+        407,
+        2237,
+        118,
+        4,
+        6
+      ],
+      [
+        0,
+        3,
+        158,
+        416,
+        59,
+        8
+      ],
+      [
+        0,
+        1,
+        4,
+        64,
+        274,
+        36
+      ],
+      [
+        0,
+        1,
+        0,
+        3,
+        35,
+        188
+      ]
+    ],
+    "XGBoost": [
+      [
+        583,
+        335,
+        4,
+        1,
+        0,
+        0
+      ],
+      [
+        212,
+        3322,
+        345,
+        2,
+        1,
+        2
+      ],
+      [
+        4,
+        449,
+        2141,
+        178,
+        3,
+        0
+      ],
+      [
+        0,
+        4,
+        118,
+        462,
+        54,
+        6
+      ],
+      [
+        0,
+        0,
+        3,
+        77,
+        267,
+        32
+      ],
+      [
+        0,
+        0,
+        0,
+        10,
+        21,
+        196
+      ]
+    ],
+    "LightGBM": [
+      [
+        529,
+        389,
+        5,
+        0,
+        0,
+        0
+      ],
+      [
+        172,
+        3320,
+        388,
+        1,
+        1,
+        2
+      ],
+      [
+        3,
+        436,
+        2173,
+        157,
+        6,
+        0
+      ],
+      [
+        0,
+        4,
+        143,
+        440,
+        52,
+        5
+      ],
+      [
+        0,
+        0,
+        5,
+        77,
+        271,
+        26
+      ],
+      [
+        0,
+        0,
+        0,
+        10,
+        40,
+        177
+      ]
+    ]
+  },
+  "predicted_dist": {
+    "LogisticRegression": {
+      "Good": 2019,
+      "Satisfactory": 2774,
+      "Moderate": 2404,
+      "Poor": 982,
+      "Very Poor": 349,
+      "Severe": 304
+    },
+    "RandomForest": {
+      "Good": 641,
+      "Satisfactory": 4385,
+      "Moderate": 2459,
+      "Poor": 754,
+      "Very Poor": 358,
+      "Severe": 235
+    },
+    "GradientBoosting": {
+      "Good": 631,
+      "Satisfactory": 4142,
+      "Moderate": 2836,
+      "Poor": 603,
+      "Very Poor": 374,
+      "Severe": 246
+    },
+    "XGBoost": {
+      "Good": 799,
+      "Satisfactory": 4110,
+      "Moderate": 2611,
+      "Poor": 730,
+      "Very Poor": 346,
+      "Severe": 236
+    },
+    "LightGBM": {
+      "Good": 704,
+      "Satisfactory": 4149,
+      "Moderate": 2714,
+      "Poor": 685,
+      "Very Poor": 370,
+      "Severe": 210
+    }
+  },
+  "ahmedabad_sensitivity": {
+    "with_ahmedabad_macro_f1": 0.7598266970704223,
+    "without_ahmedabad_macro_f1": 0.7655890020792054
+  },
+  "class_counts_train": {
+    "Good": 418,
+    "Satisfactory": 4340,
+    "Moderate": 6054,
+    "Poor": 2137,
+    "Very Poor": 1958,
+    "Severe": 1111
+  },
+  "class_counts_test": {
+    "Good": 923,
+    "Satisfactory": 3884,
+    "Moderate": 2775,
+    "Poor": 644,
+    "Very Poor": 379,
+    "Severe": 227
+  }
+}
